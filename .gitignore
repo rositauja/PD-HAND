@@ -31,3 +31,9 @@ Thumbs.db
 # Temporary files
 *.tmp
 *.log
+
+# Generated model training outputs
+outputs/
+
+# Generated conversion previews
+preview_output/

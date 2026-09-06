@@ -336,16 +336,20 @@ def save_converted_image(image, output_path):
 
 if __name__ == "__main__":
     
-    INPUT_IMAGE = r"C:\Users\User\82925_FYP\dataset\raw\spiral\healthy\SpiralControl\0068-4.jpg"
-    OUTPUT_IMAGE = r"C:\Users\User\82925_FYP\dataset\pd_spiral_enhanced.png"
-    OUTPUT_PLOT = r"C:\Users\User\82925_FYP\dataset\pd_spiral_enhanced_comparison.png"
-    
+    PROJECT_ROOT = Path(__file__).resolve().parent.parent
+    DATA_DIR = PROJECT_ROOT / "dataset"
+
+    INPUT_IMAGE = DATA_DIR / "raw" / "spiral" / "healthy" / "SpiralControl" / "0068-4.jpg"
+
+    PREVIEW_OUTPUT_DIR = PROJECT_ROOT / "preview_output"
+    PREVIEW_OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
+
+    OUTPUT_IMAGE = PREVIEW_OUTPUT_DIR / "pd_spiral_enhanced.png"
+    OUTPUT_PLOT = PREVIEW_OUTPUT_DIR / "pd_spiral_enhanced_comparison.png"
+
     # Choose augmentation strength: 'light', 'medium', 'heavy'
     STRENGTH = 'medium'
-    
-    # Auto-create preview_output folder
-    PREVIEW_OUTPUT_DIR = r"C:\Users\User\82925_FYP\preview_output"
-    os.makedirs(PREVIEW_OUTPUT_DIR, exist_ok=True)
+
     print(f"✓ Preview output folder ready: {PREVIEW_OUTPUT_DIR}\n")
     
     print("=" * 70)

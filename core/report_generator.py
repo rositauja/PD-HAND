@@ -2,10 +2,16 @@
 import google.generativeai as genai
 import json
 import os
+from dotenv import load_dotenv
 
-# Gemini API key 
-os.environ["GEMINI_API_KEY"] = "REPLACE_WITH_REAL_API_KEY"
-genai.configure(api_key=os.environ["GEMINI_API_KEY"])
+# Load environment variables
+load_dotenv()
+
+# Gemini API key
+api_key = os.getenv("GEMINI_API_KEY")
+
+if api_key:
+    genai.configure(api_key=api_key)
 
 def generate_analysis(detected_type, features):
     """

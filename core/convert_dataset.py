@@ -221,27 +221,31 @@ def main():
     print("=" * 80)
     print(f"Start time: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n")
     
+    # Project root
+    PROJECT_ROOT = Path(__file__).resolve().parent.parent
+    DATA_DIR = PROJECT_ROOT / "dataset"
+
     # Define all categories
     categories = [
         {
             'name': 'Spiral - Parkinson',
-            'input': r"C:\Users\User\FYP2\data\raw\spiral\parkinson\SpiralPatients",
-            'output': r"C:\Users\User\FYP2\data\raw_camera\spiral_camera\parkinson\SpiralPatients"
+            'input': DATA_DIR / "raw" / "spiral" / "parkinson" / "SpiralPatients",
+            'output': DATA_DIR / "raw_camera" / "spiral_camera" / "parkinson" / "SpiralPatients"
         },
         {
             'name': 'Spiral - Healthy',
-            'input': r"C:\Users\User\FYP2\data\raw\spiral\healthy\SpiralControl",
-            'output': r"C:\Users\User\FYP2\data\raw_camera\spiral_camera\healthy\SpiralControl"
+            'input': DATA_DIR / "raw" / "spiral" / "healthy" / "SpiralControl",
+            'output': DATA_DIR / "raw_camera" / "spiral_camera" / "healthy" / "SpiralControl"
         },
         {
             'name': 'Meander - Parkinson',
-            'input': r"C:\Users\User\FYP2\data\raw\meander\parkinson\MeanderPatients",
-            'output': r"C:\Users\User\FYP2\data\raw_camera\meander_camera\parkinson\MeanderPatients"
+            'input': DATA_DIR / "raw" / "meander" / "parkinson" / "MeanderPatients",
+            'output': DATA_DIR / "raw_camera" / "meander_camera" / "parkinson" / "MeanderPatients"
         },
         {
             'name': 'Meander - Healthy',
-            'input': r"C:\Users\User\FYP2\data\raw\meander\healthy\MeanderControl",
-            'output': r"C:\Users\User\FYP2\data\raw_camera\meander_camera\healthy\MeanderControl"
+            'input': DATA_DIR / "raw" / "meander" / "healthy" / "MeanderControl",
+            'output': DATA_DIR / "raw_camera" / "meander_camera" / "healthy" / "MeanderControl"
         }
     ]
     
