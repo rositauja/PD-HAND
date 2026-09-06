@@ -1,0 +1,33 @@
+# Python virtual environment
+fyp2_env/
+venv/
+.venv/
+
+# Python cache files
+__pycache__/
+*.py[cod]
+
+# Local database
+data/*.db
+*.sqlite
+*.sqlite3
+
+# Dataset files
+dataset/
+
+# Environment variables and secrets
+.env
+.env.*
+.streamlit/secrets.toml
+
+# IDE / editor files
+.vscode/
+.idea/
+
+# Operating system files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.log
